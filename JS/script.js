@@ -1,6 +1,7 @@
 const mario = document.querySelector('.mario');
 const pipe = document.querySelector('.pipe');
 const clouds = document.querySelector('.clouds');
+const btngo = document.querySelector('.div-go');
 
 
 const jump= () =>{
@@ -32,11 +33,15 @@ const loop = setInterval( () => {
         
         clouds.style.animation = 'none';
         clouds.style.left = `${cloudsPosition}px`;
-
+       
+        btngo.style.display = 'flex'
     }
     
 }, 10);
 
+const restart = () =>{
+   location.reload();
+};
 
 
 document.addEventListener('keydown',jump);
