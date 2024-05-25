@@ -2,7 +2,7 @@ const mario = document.querySelector('.mario');
 const pipe = document.querySelector('.pipe');
 const clouds = document.querySelector('.clouds');
 const btngo = document.querySelector('.div-go');
-const scorre = document.querySelector('.scorre');
+const score = document.querySelector('.score');
 
 let points = 0
 const jump= () =>{
@@ -15,6 +15,7 @@ const jump= () =>{
    
 
 }
+
 
 const loop = setInterval( () => {
     const pipePosition = pipe.offsetLeft;
@@ -37,7 +38,7 @@ const loop = setInterval( () => {
         
         btngo.style.display = 'flex'
 
-        scorre.textContent= 'Your Scorre:'+`${points*1000}`
+        score.textContent= 'Your Score:'+`${points*1000}`
         points=0;
 
         clearInterval(loop);

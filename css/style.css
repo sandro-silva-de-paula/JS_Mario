@@ -21,28 +21,35 @@
     bottom: 0;
     width: 60px;
     animation: pipe-animation 2s infinite linear;
+    right: -80px;
 
 }
 
 
 
 @keyframes pipe-animation {
-    from { right: -80px; }
-    to { right: 100%;}
+    from { 
+        right: -80px; 
+    }
+    to {
+        right: 100%;
+        }
 }
 
 .mario{
     position: absolute;
     bottom: 0;
     width: 100px;
+    cursor: pointer;
+
 }
 
 
 .jump{
-    animation:maio-jump-animation .7s ease-out;
+    animation:mario-jump-animation .7s ease-out;
  }
 
-@keyframes maio-jump-animation {
+@keyframes mario-jump-animation {
     0% { 
         bottom: 0px;
      }
@@ -108,10 +115,21 @@
     align-items: center;
 
 
+
   }
 
-  .scorre{
+.score{
 
     position: absolute;
-     right: 50%;
-  }
+    right: 50%; 
+    animation: blinker 1s linear infinite;
+
+   
+}
+
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
