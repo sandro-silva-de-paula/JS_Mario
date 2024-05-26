@@ -13,6 +13,11 @@ const list_records = [
 const create_score= (text) => {
     let score = document.createElement("li");
     score.innerHTML = text;
+    if (text.slice(5,15) == 'Your Score'){
+         score.classList.add('blink');
+         score.classList.add('sombra');
+        };
+    
     document.getElementById("myScore").appendChild(score);
 
   }
@@ -66,7 +71,7 @@ const loop = setInterval( () => {
         for (let i=0; i< list_records_sorted.length; i++){
             create_score( (i+1) +'° - '+list_records_sorted[i].a +' : ' +list_records_sorted[i].b);
         };
-
+        
         points=0;
 
         clearInterval(loop);
