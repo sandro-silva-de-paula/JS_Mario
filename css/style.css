@@ -89,7 +89,7 @@ ul{
     font-size: 24px;
     border-radius: 12px;
     width: 50%;
-    height: 10%;
+    /* height: 10%; */
     margin: 0 auto;
     cursor: pointer;
     max-width: 430px;
@@ -131,7 +131,7 @@ ul{
     width: 50%;
     max-width: 430px;
     position: fixed;
-    top: 30%;
+    top: 20%;
     left: 35%;
    
 
