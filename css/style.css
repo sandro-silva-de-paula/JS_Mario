@@ -81,6 +81,7 @@ ul{
 }
 
 .game-over{
+    grid-area: button;
     background-color: rgb(235, 6, 6);
     border: none;
     padding: 15px 32px;
@@ -89,13 +90,13 @@ ul{
     font-size: 24px;
     border-radius: 12px;
     width: 50%;
-    /* height: 10%; */
-    margin: 0 auto;
     cursor: pointer;
     max-width: 430px;
-    position: fixed;
+    min-width: 300px;
+
+    /* position: fixed;
     bottom: 20%;
-    left: 35%;
+    left: 35%; */
 
 }
 .game-over:active {
@@ -108,11 +109,15 @@ ul{
   }
 
 .div-go{
+    /* display: grid; */
+    grid-template-columns: auto; 
+    grid-template-areas: 'score' 'button' ;
     display: none; 
     position: absolute;
     width: 100%;
     height: 100vh;
     background: rgba(8, 4, 8, 0.244);
+    justify-content: space-around;
     align-items: center;
 
 
@@ -121,6 +126,7 @@ ul{
 
 
 .score{
+    grid-area: score;
     background-color: rgba(96, 85, 85, 0.913);
     color: aliceblue;
     border: none;
@@ -130,9 +136,10 @@ ul{
     border-radius: 12px;
     width: 50%;
     max-width: 430px;
-    position: fixed;
+    min-width: 300px;
+    /* position: fixed;
     top: 20%;
-    left: 35%;
+    left: 35%; */
    
 
 

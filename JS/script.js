@@ -53,7 +53,7 @@ const loop = setInterval( () => {
         clouds.style.left = `${cloudsPosition}px`;
 
         //on div-go
-        dvgo.style.display = 'flex';
+        dvgo.style.display = 'grid';
 
         //add your score a lista e indexar
         
