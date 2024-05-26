@@ -38,7 +38,7 @@ const loop = setInterval( () => {
         //on div-go
         dvgo.style.display = 'flex'
 
-        score.textContent= 'Your Score:'+`${points*1000}`
+        score.textContent= 'Your Score: '+`${points*1000}`
         points=0;
 
         clearInterval(loop);
