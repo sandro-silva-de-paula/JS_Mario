@@ -161,3 +161,17 @@ ul{
 .you-score{
     font-size: 24px;
 }
+
+
+.coin{
+    width: 50px;
+    position: absolute;
+    bottom: 120px;
+    animation: coin-animation 5s infinite linear;
+
+}
+@keyframes coin-animation {
+    from { right: -500px; }
+    to { right: 100%;}
+}
+

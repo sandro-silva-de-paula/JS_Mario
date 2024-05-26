@@ -3,6 +3,9 @@ const pipe = document.querySelector('.pipe');
 const clouds = document.querySelector('.clouds');
 const dvgo = document.querySelector('.div-go');
 const score = document.querySelector('.you-score');
+const coin = document.querySelector('.coin');
+const verif = document.querySelector('.verif');
+
 const list_records = [    
     {a: 'Priscila Lopes', b: 72000 },
     {a: 'Joao Gabriel Rego',b: 22000 },
@@ -25,12 +28,14 @@ const create_score= (text) => {
  
 
 let points = 0
-
+// verif.innerHTML= points;
 const jump= () =>{
     mario.classList.add('jump');
     setTimeout( () => {
         mario.classList.remove('jump');
         points += 1;
+        // verif.innerHTML= points;
+
     }, 700);
 
    
@@ -42,26 +47,49 @@ const loop = setInterval( () => {
     const pipePosition = pipe.offsetLeft;
     const cloudsPosition = clouds.offsetLeft;
     const marioPosition = +window.getComputedStyle(mario).bottom.replace('px','');
-    
-    if (pipePosition <= 85 &&  pipePosition >0 && marioPosition<=60){
+    const coinPosition = coin.offsetLeft;
 
+    if (coinPosition <= 85 &&  coinPosition >0 && marioPosition==120){
+        points+=.5;
+        // verif.innerHTML= points;
+        
+        coin.src= 'images/coin_2.gif';
+        coin.style.animation = 'none';
+        setTimeout( () => {
+            coin.style.animation = 'coin-animation 5s infinite linear';
+            coin.src= 'images/coin.gif';
+   
+        }, 700);
+    
+        
+    };
+    
+    // if game-over
+    if (pipePosition <= 85 &&  pipePosition >0 && marioPosition<=60){
+        
         pipe.style.animation = 'none';
         pipe.style.left = `${pipePosition}px`;
-    
+        
         mario.style.animation = 'none';
         mario.style.bottom = `${marioPosition}px`;
-        mario.src = 'images/game-over.png';
-        mario.style.width= '60px';
+        mario.src = 'images/mario_gover.gif';
+        mario.style.width= '100px';
         mario.style.marginLeft = '50px';
 
         clouds.style.animation = 'none';
         clouds.style.left = `${cloudsPosition}px`;
+
+        coin.style.animation = 'none';
+        coin.style.left = `${coinPosition}px`;
+
+
 
         //on div-go
         dvgo.style.display = 'grid';
 
         //add your score a lista e indexar
         
+        // list_records.push( {a: 'Your Score' ,b: points});
         list_records.push( {a: 'Your Score' ,b: points*1000});
         let list_records_sorted = 
         list_records.sort(function(a_, b_){return a_.b - b_.b});
