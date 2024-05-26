@@ -1,8 +1,8 @@
 const mario = document.querySelector('.mario');
 const pipe = document.querySelector('.pipe');
 const clouds = document.querySelector('.clouds');
-const btngo = document.querySelector('.div-go');
-const score = document.querySelector('.score');
+const dvgo = document.querySelector('.div-go');
+const score = document.querySelector('.you-score');
 
 let points = 0
 const jump= () =>{
@@ -35,8 +35,8 @@ const loop = setInterval( () => {
 
         clouds.style.animation = 'none';
         clouds.style.left = `${cloudsPosition}px`;
-        
-        btngo.style.display = 'flex'
+        //on div-go
+        dvgo.style.display = 'flex'
 
         score.textContent= 'Your Score:'+`${points*1000}`
         points=0;
