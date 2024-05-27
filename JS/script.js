@@ -4,7 +4,6 @@ const clouds = document.querySelector('.clouds');
 const dvgo = document.querySelector('.div-go');
 const score = document.querySelector('.you-score');
 const coin = document.querySelector('.coin');
-const verif = document.querySelector('.verif');
 
 const list_records = [    
     {a: 'Priscila Lopes', b: 72000 },
@@ -28,13 +27,11 @@ const create_score= (text) => {
  
 
 let points = 0
-// verif.innerHTML= points;
 const jump= () =>{
     mario.classList.add('jump');
     setTimeout( () => {
         mario.classList.remove('jump');
         points += 1;
-        // verif.innerHTML= points;
 
     }, 700);
 
@@ -49,19 +46,16 @@ const loop = setInterval( () => {
     const marioPosition = +window.getComputedStyle(mario).bottom.replace('px','');
     const coinPosition = coin.offsetLeft;
 
-    if (coinPosition <= 85 &&  coinPosition >0 && marioPosition==120){
+    //if pegar coin 
+    if (coinPosition <= 85 &&  coinPosition >0 && marioPosition>=100){
         points+=.5;
-        // verif.innerHTML= points;
-        
         coin.src= 'images/coin_2.gif';
         coin.style.animation = 'none';
         setTimeout( () => {
-            coin.style.animation = 'coin-animation 5s infinite linear';
+            coin.style.animation = 'coin-animation 5s infinite';
             coin.src= 'images/coin.gif';
    
-        }, 700);
-    
-        
+        }, 1700);
     };
     
     // if game-over
