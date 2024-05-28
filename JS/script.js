@@ -90,8 +90,8 @@ const loop = setInterval( () => {
         list_records_sorted=list_records_sorted.toReversed();
 
 
-        for (let i=0; i< list_records_sorted.length; i++){
-            create_score( (i+1) +'° - '+list_records_sorted[i].a +' : ' +list_records_sorted[i].b);
+        for (let i in list_records_sorted){
+                create_score( (parseInt(i)+1) +'° - '+list_records_sorted[i].a +' : ' +list_records_sorted[i].b);
         };
         
         points=0;
